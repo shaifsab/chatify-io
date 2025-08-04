@@ -1,0 +1,210 @@
+/* src/styles/Profile.css */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Light Mode */
+body.light {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Profile Container */
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+/* Profile Card */
+.profile__card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(15px); /* Frosted glass effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: white;
+  animation: slideUp 0.5s ease-out;
+}
+
+.profile__card-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Avatar */
+.profile__avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile__avatar-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.profile__avatar-upload input {
+  display: none;
+}
+
+.profile__avatar-edit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Input Fields */
+.profile__name-input, .profile__email-input, .profile__password-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: white;
+  border: 1px solid #444;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.profile__name-input:focus,
+.profile__email-input:focus,
+.profile__password-input:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.2);
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.profile__edit-btn, .profile__save-btn, .profile__cancel-btn, .profile__back-link, .profile__theme-toggle-btn {
+  background-color: transparent;
+  border: none;
+  color: #64b5f6;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+
+.profile__edit-btn:hover,
+.profile__save-btn:hover,
+.profile__cancel-btn:hover,
+.profile__back-link:hover,
+.profile__theme-toggle-btn:hover {
+  color: #42a5f5;
+}
+
+/* Icon styling */
+.profile__icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Action Buttons Container */
+.profile__actions {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+/* Link */
+.profile__back-link {
+  color: #64b5f6;
+  text-decoration: none;
+  display: block;
+  font-size: 1.2rem;
+}
+
+/* Light Mode Styles */
+body.light .profile__card {
+  background: rgba(255, 255, 255, 0.15); /* glass effect */
+}
+
+body.light .profile__name-input,
+body.light .profile__email-input,
+body.light .profile__password-input {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  border: 1px solid #ccc;
+}
+
+body.light .profile__save-btn,
+body.light .profile__cancel-btn {
+  background-color: rgba(100, 181, 246, 0.8);
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile__card {
+    padding: 2rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile__name-input,
+  .profile__email-input,
+  .profile__password-input {
+    font-size: 0.9rem;
+  }
+}

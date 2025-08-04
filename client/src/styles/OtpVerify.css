@@ -1,0 +1,153 @@
+/* src/styles/OtpVerify.css */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+/* OTP Verification Container */
+.otp-verify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+    background-color: #121212;
+  color: #ffffff;
+}
+
+/* OTP Form */
+.otp-verify__form {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.otp-verify__title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #64b5f6;
+  margin-bottom: 1rem;
+}
+
+.otp-verify__subheading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.otp-verify__input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: rgb(255, 255, 255);
+  border: 1px solid #444;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.otp-verify__input:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.2);
+  transform: scale(1.05);
+}
+
+.otp-verify__button {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(100, 181, 246, 0.6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.otp-verify__button:hover {
+  background-color: rgba(100, 181, 246, 0.8);
+}
+
+.otp-verify__resend-note {
+  text-align: center;
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+.otp-verify__resend-btn {
+  background: none;
+  border: none;
+  color: #64b5f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-card__theme-toggle {
+  margin-top: 1.5rem;
+  padding: 10px 15px;
+  background-color: #64b5f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-card__theme-toggle:hover {
+  background-color: #42a5f5;
+}
+
+/* Animation for OTP form */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .otp-verify__form {
+    padding: 2rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .otp-verify__title {
+    font-size: 2rem;
+  }
+
+  .otp-verify__subheading {
+    font-size: 1rem;
+  }
+
+  .otp-verify__input {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,599 @@
+.chat-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.sidebar.dark-mode{
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+
+/* Sidebar styles */
+.sidebar {
+  width: 350px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.sidebar.active{
+  @media screen and (max-width: 768px) {
+  display: block;
+  width: 100%;
+  }
+}
+
+.sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.sidebar-header.dark-mode{
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.sidebar-header.dark-mode h2 {
+   color: #ffffff
+}
+
+.sidebar-header.dark-mode h4 {
+   color: #ffffff
+}
+
+.sidebar-header h2 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.user-info span {
+  font-weight: 500;
+  color: #666;
+}
+.user-profile {
+  display: flex;                  /* Apply flexbox */
+  align-items: center;            /* Vertically align the items */
+  justify-content: flex-start;    /* Align the content to the left */
+  gap: 15px;    
+   flex-direction: row;                  /* Add spacing between image and name */
+}
+
+.userImg {
+  width: 50px;                    /* Set the width of the profile image */
+  height: 50px;                   /* Set the height of the profile image */
+  border-radius: 50%;             /* Ensure the image is circular */
+  overflow: hidden;               /* Hide anything overflowed */
+}
+
+.userImg img {
+  width: 100%;                    /* Ensure the image fills the container */
+  height: 100%;                   /* Ensure the image fills the container */
+  object-fit: cover;              /* Crop the image to fit the container */
+}
+
+.user-profile h4 {
+  font-size: 1rem;              /* Increase the font size */
+  font-weight: bold;              /* Make the name bold */
+  margin: 0;                      /* Remove any default margin */
+  color: #333;                    /* Set a dark color for text */
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #0084ff;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+}
+
+.new-conversation {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-conversation h2 {
+  margin: 0;
+  color: #333;
+}
+
+.new-conversation-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0084ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.new-conversation-button:hover {
+  background-color: #0066cc;
+}
+
+.new-conversation form {
+  margin-top: 0.5rem;
+}
+
+.new-conversation input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.new-conversation-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.new-conversation-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.new-conversation-actions button:first-child {
+  background-color: #005eb6;
+  color: white;
+}
+
+.new-conversation-actions button:last-child {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Conversation list styles */
+.conversation-list {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.conversation-list.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.conversation-item {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  position: relative;
+   background-color: #f5f5f5;
+   /* color: #333; */
+   color: #000000;
+}
+
+.conversation-item.dark-mode {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+}
+
+
+.conversation-item:hover.dark-mode {
+    background-color: #121212;
+  color: #ffffff;
+}
+
+.conversation-item:hover {
+  background-color: #f9f9f9;
+}
+
+.conversation-item.selected {
+  background-color: #e4e4e4;
+}
+.conversation-item.selected.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+
+
+.conversation-item.active::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 40px;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(0, 255, 0);  
+  border-radius: 50%;
+}
+
+.avatar img {
+  width: 100%;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0084ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  overflow: hidden;
+}
+
+.conversation-details {
+  flex: 1;
+  min-width: 0;
+}
+
+
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.conversation-header h3 {
+  margin: 0;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.last-message {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empty-conversations {
+  padding: 1rem;
+  text-align: center;
+  color: #999;
+}
+
+.empty-conversations.dark-mode{
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Chat box styles */
+.chat-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}
+.chat-box.active {
+  display: flex !important;
+}
+.chat-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.chat-header.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+.back-button{
+  font-size: 25px;
+  font-weight: 700;
+  color: #0066cc;
+  cursor: pointer;
+}
+.chat-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.user-details p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: hsl(0, 100%, 95%);
+}
+
+.messages-container.dark-mode {
+    background-color: #121212;
+  color: #000000;
+}
+
+.message {
+  max-width: 70%;
+  animation: fade-in 0.3s;
+}
+
+.message.sent {
+  align-self: flex-end;
+}
+
+.message.received {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 0.75rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.message.sent .message-content {
+  background-color: #0084ff;
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.message.received .message-content {
+  background-color: white;
+  color: black;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.message-content p {
+  margin: 0 0 0.25rem 0;
+}
+
+.message-time {
+  font-size: 0.6875rem;
+  opacity: 0.8;
+  display: block;
+  text-align: right;
+}
+
+.message-input-form {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.message-input-form.dark-mode {
+background-color: #121212;
+}
+
+
+.message-input-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.message-input-form input:focus {
+  outline: none;
+  border-color: #0084ff;
+}
+
+.message-input-form button {
+  padding: 0 1rem;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.message-input-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.empty-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  text-align: center;
+}
+
+.empty-chat.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.email-input-container {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.email-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.input-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-button {
+  background-color: #0084ff;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.conversation-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.conversation-header-container h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+
+/* ============= */
+
+/* Menu Container */
+.menu-container {
+  position: relative; /* For dropdown positioning */
+}
+
+.menu-container.dark-mode{
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #0084ff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-button:hover {
+  color: #0066cc;
+}
+
+/* Dropdown Menu */
+.menu-dropdown {
+  position: absolute;
+  top: 35px; /* Adjust based on your layout */
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 150px;
+  z-index: 100;
+}
+
+/* Dropdown Menu Items */
+.menu-item {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  text-align: left;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item:hover {
+  background-color: #f1f1f1;
+  color: #0084ff;
+}
+
+/* Icons in Menu */
+.menu-item i {
+  margin-right: 8px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .menu-dropdown {
+  background-color: #333;
+  color: #fff;
+}
+
+
+
+
+body.dark-mode .menu-item {
+  color: #fff;
+}
+
+body.dark-mode .menu-item:hover {
+  background-color: #444;
+  color: #00b0ff;
+}
