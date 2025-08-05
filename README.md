@@ -114,12 +114,3 @@ Reach out to [shaifsab](https://github.com/shaifsab) or open an issue for suppor
 ---
 
 © 2025 Chatify.io
-```
-
-### Notes:
-- **Markdown Format**: The content is formatted in Markdown, suitable for GitHub, with clear headings, lists, and code blocks.
-- **Refinements**: Streamlined some sections for brevity while keeping all essential details from the provided document.
-- **Assumptions**: Assumed typical MERN stack setup (e.g., JWT for authentication, standard folder structure). If your project uses specific tools or features (e.g., Redux, TypeScript, or unique functionality), let me know to customize further.
-- **Next Steps**: If you meant something else by "give me markdown" (e.g., a specific section, different style, or additional content), please provide details, and I’ll update the README.
-
-Let me know if this meets your needs or if you want further tweaks!
