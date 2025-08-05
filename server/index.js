@@ -21,7 +21,7 @@ app.use(cors({
 // Create HTTP server and Socket.io instance
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
-    cors: ['https://chatweb-app-1pfm.onrender.com', 'http://localhost:5173']   
+    cors: "https://chatify-io-l6q4.onrender.com" 
 });
 
 // Make Socket.io available globally
